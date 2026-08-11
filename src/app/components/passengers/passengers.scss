@@ -1,0 +1,279 @@
+.passengers {
+  background: var(--zuvo-black);
+
+  &__header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--zuvo-lime);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  &__layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 560px;
+  }
+
+  /* Phone mockup */
+  &__phone {
+    position: relative;
+    z-index: 2;
+    width: 260px;
+    flex-shrink: 0;
+  }
+
+  &__phone-frame {
+    width: 100%;
+    aspect-ratio: 9 / 18;
+    background: var(--zuvo-dark);
+    border-radius: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 25px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  &__phone-notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 22px;
+    background: var(--zuvo-black);
+    border-radius: 0 0 14px 14px;
+    z-index: 10;
+  }
+
+  &__phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    padding: 40px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: white;
+    }
+  }
+
+  &__app-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--zuvo-dark-3);
+    border: 1.5px solid rgba(191, 255, 0, 0.3);
+  }
+
+  &__app-search {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &__app-recents {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__app-recent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  &__app-recent-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(191, 255, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__app-recent-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &__app-recent-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  &__app-recent-addr {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  &__app-map {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0d1117;
+    margin-top: 4px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Features */
+  &__features {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__feature {
+    position: absolute;
+    max-width: 220px;
+    pointer-events: auto;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--zuvo-white);
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: var(--zuvo-gray-light);
+      line-height: 1.5;
+    }
+
+    &--tl {
+      top: 5%;
+      left: 0;
+    }
+
+    &--tr {
+      top: 5%;
+      right: 0;
+      text-align: right;
+    }
+
+    &--bl {
+      bottom: 10%;
+      left: 0;
+    }
+
+    &--br {
+      bottom: 10%;
+      right: 0;
+      text-align: right;
+    }
+  }
+
+  &__feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(191, 255, 0, 0.06);
+    border: 1px solid rgba(191, 255, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    transition: all var(--transition-base);
+  }
+
+  &__feature--tr &__feature-icon,
+  &__feature--br &__feature-icon {
+    margin-left: auto;
+  }
+
+  &__feature:hover &__feature-icon {
+    background: rgba(191, 255, 0, 0.12);
+    border-color: rgba(191, 255, 0, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .passengers {
+    &__layout {
+      flex-direction: column;
+      min-height: auto;
+      gap: 3rem;
+    }
+
+    &__features {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    &__feature {
+      position: relative;
+      max-width: 100%;
+      text-align: left !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+    }
+
+    &__feature-icon {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .passengers {
+    &__phone {
+      width: 220px;
+    }
+
+    &__features {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}

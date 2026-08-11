@@ -1,0 +1,108 @@
+<section class="technology section" id="tecnologia" aria-label="Tecnología de Zuvo">
+  <div class="technology__container container">
+    <div class="technology__header reveal">
+      <span class="technology__label">Infraestructura</span>
+      <h2 class="technology__title">Tecnología que <span class="text-lime">mueve personas.</span></h2>
+    </div>
+
+    <div class="technology__grid">
+      <!-- Dashboard Visual -->
+      <div class="technology__visual reveal reveal-delay-2">
+        <div class="technology__dashboard">
+          <div class="technology__dashboard-header">
+            <div class="technology__dashboard-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="technology__dashboard-title">Sistema de ruteo inteligente</div>
+          </div>
+          <div class="technology__dashboard-body">
+            <svg class="technology__map-svg" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid background -->
+              <path d="M0 50 L400 50 M0 100 L400 100 M0 150 L400 150 M0 200 L400 200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <path d="M50 0 L50 250 M100 0 L100 250 M150 0 L150 250 M200 0 L200 250 M250 0 L250 250 M300 0 L300 250 M350 0 L350 250" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              
+              <!-- Data nodes -->
+              <circle cx="80" cy="120" r="4" fill="var(--zuvo-lime)"/>
+              <circle cx="80" cy="120" r="16" fill="var(--zuvo-lime-glow)"/>
+              
+              <circle cx="200" cy="80" r="4" fill="var(--zuvo-white)"/>
+              
+              <circle cx="320" cy="180" r="4" fill="var(--zuvo-lime)"/>
+              <circle cx="320" cy="180" r="16" fill="var(--zuvo-lime-glow)"/>
+              
+              <circle cx="150" cy="200" r="4" fill="var(--zuvo-white)"/>
+              
+              <!-- Connectivity lines -->
+              <path d="M80 120 L200 80 L320 180" stroke="var(--zuvo-lime)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+              <path d="M80 120 L150 200 L320 180" stroke="var(--zuvo-lime)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.2"/>
+              
+              <!-- Abstract data charts -->
+              <path d="M20 220 C60 220, 100 150, 150 160 C200 170, 250 120, 300 130 C350 140, 380 90, 400 90" stroke="var(--zuvo-gray-dark)" stroke-width="2"/>
+              <path d="M20 230 L20 220 C60 220, 100 150, 150 160 C200 170, 250 120, 300 130 C350 140, 380 90, 400 90 L400 230 Z" fill="url(#grad)" opacity="0.1"/>
+              
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#fff"/>
+                  <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            
+            <div class="technology__data-cards">
+              <div class="technology__data-card">
+                <span class="technology__data-value">99.9%</span>
+                <span class="technology__data-label">Uptime</span>
+              </div>
+              <div class="technology__data-card">
+                <span class="technology__data-value">&lt;50ms</span>
+                <span class="technology__data-label">Latencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features List -->
+      <div class="technology__features reveal reveal-delay-3">
+        <div class="technology__feature">
+          <div class="technology__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="technology__feature-content">
+            <h3>Geolocalización precisa</h3>
+            <p>Conexión ultrarrápida entre pasajeros y conductores usando algoritmos eficientes.</p>
+          </div>
+        </div>
+
+        <div class="technology__feature">
+          <div class="technology__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="technology__feature-content">
+            <h3>Seguimiento en tiempo real</h3>
+            <p>Visualización en vivo y sin demoras gracias a nuestra infraestructura de datos.</p>
+          </div>
+        </div>
+
+        <div class="technology__feature">
+          <div class="technology__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="technology__feature-content">
+            <h3>Conectividad robusta</h3>
+            <p>Optimizado para funcionar incluso en zonas de baja conectividad móvil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

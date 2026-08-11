@@ -1,0 +1,101 @@
+.footer {
+  background: var(--zuvo-black-light);
+  padding-block: 4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  &__brand {
+    max-width: 300px;
+  }
+
+  &__logo {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--zuvo-white);
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-fast);
+    
+    &:hover {
+      color: var(--zuvo-lime);
+    }
+  }
+
+  &__tagline {
+    font-size: 0.9rem;
+    color: var(--zuvo-gray-light);
+  }
+
+  &__nav {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 3rem;
+    }
+    
+    a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--zuvo-gray-lighter);
+      transition: color var(--transition-fast);
+      
+      &:hover {
+        color: var(--zuvo-lime);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copyright {
+    font-size: 0.8rem;
+    color: var(--zuvo-gray);
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+    
+    a {
+      color: var(--zuvo-gray-light);
+      transition: color var(--transition-fast);
+      
+      &:hover {
+        color: var(--zuvo-lime);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__top {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    
+    &__nav ul {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    &__bottom {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+  }
+}

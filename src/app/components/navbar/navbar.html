@@ -1,0 +1,48 @@
+<nav class="navbar" [class.scrolled]="isScrolled()" role="navigation" aria-label="Navegación principal">
+  <div class="navbar__container">
+    <!-- Logo -->
+    <a class="navbar__logo" href="#inicio" (click)="scrollTo($event, '#inicio')" aria-label="Zuvo - Ir al inicio">
+      ZUVO
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="navbar__links">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" (click)="scrollTo($event, link.href)">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA -->
+    <a class="navbar__cta btn btn--primary btn--sm" href="#descargar" (click)="scrollTo($event, '#descargar')">
+      Descargar app
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar__hamburger"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-label="Abrir menú"
+    >
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile" [class.active]="isMobileMenuOpen()">
+    <ul class="navbar__mobile-links">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" (click)="scrollTo($event, link.href)">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+    <a class="btn btn--primary" href="#descargar" (click)="scrollTo($event, '#descargar')">
+      Descargar app
+    </a>
+  </div>
+</nav>

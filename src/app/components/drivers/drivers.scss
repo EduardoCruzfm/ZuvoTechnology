@@ -1,0 +1,349 @@
+.drivers {
+  background: var(--zuvo-black-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(4rem, 8vw, 8rem);
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--zuvo-lime);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin-bottom: 1.25rem;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+    color: var(--zuvo-gray-lighter);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  &__feature {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--zuvo-white);
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--zuvo-gray-light);
+    }
+  }
+
+  &__feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(191, 255, 0, 0.06);
+    border: 1px solid rgba(191, 255, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__feature:hover &__feature-icon {
+    background: rgba(191, 255, 0, 0.12);
+    border-color: rgba(191, 255, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Visual - Driver App Mockup */
+  &__visual {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    order: -1;
+  }
+
+  &__phone-frame {
+    width: 280px;
+    aspect-ratio: 9 / 19;
+    background: var(--zuvo-dark);
+    border-radius: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 25px 60px rgba(0, 0, 0, 0.6),
+      0 0 80px rgba(191, 255, 0, 0.05);
+  }
+
+  &__phone-notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 22px;
+    background: var(--zuvo-black);
+    border-radius: 0 0 14px 14px;
+    z-index: 10;
+  }
+
+  &__phone-screen {
+    width: 100%;
+    height: 100%;
+    background: var(--zuvo-black);
+    padding: 44px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__app-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(191, 255, 0, 0.1);
+    border: 1px solid rgba(191, 255, 0, 0.2);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  &__app-online-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--zuvo-lime);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  &__app-online-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--zuvo-lime);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__app-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  &__app-stat {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__app-stat-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--zuvo-white);
+    margin-bottom: 2px;
+  }
+
+  &__app-stat-label {
+    font-size: 0.6rem;
+    color: var(--zuvo-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__app-request {
+    background: var(--zuvo-dark-2);
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid rgba(191, 255, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(191, 255, 0, 0.1);
+    animation: request-float 4s ease-in-out infinite;
+  }
+
+  &__app-request-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &__app-request-badge {
+    background: var(--zuvo-lime);
+    color: var(--zuvo-black);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__app-request-route {
+    position: relative;
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__app-request-line {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &__app-request-point {
+    position: relative;
+    
+    span {
+      font-size: 0.8rem;
+      color: var(--zuvo-white);
+      margin-left: 16px;
+    }
+  }
+
+  &__app-request-dot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    
+    &--origin {
+      background: var(--zuvo-white);
+    }
+    
+    &--dest {
+      background: var(--zuvo-lime);
+      box-shadow: 0 0 0 2px var(--zuvo-dark-2), 0 0 0 4px rgba(191, 255, 0, 0.3);
+    }
+  }
+
+  &__app-request-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 12px;
+  }
+
+  &__app-request-distance {
+    font-size: 0.85rem;
+    color: var(--zuvo-gray-lighter);
+  }
+
+  &__app-request-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--zuvo-lime);
+  }
+
+  &__app-request-btn {
+    background: var(--zuvo-lime);
+    color: var(--zuvo-black);
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  &__app-map-hint {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #0d1117;
+    margin-top: 8px;
+    
+    svg {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+    }
+  }
+}
+
+@keyframes request-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 1024px) {
+  .drivers {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      text-align: center;
+    }
+
+    &__content {
+      align-items: center;
+    }
+
+    &__subtitle {
+      margin-inline: auto;
+    }
+
+    &__feature {
+      text-align: left;
+    }
+
+    &__visual {
+      order: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .drivers {
+    &__phone-frame {
+      width: 250px;
+    }
+  }
+}

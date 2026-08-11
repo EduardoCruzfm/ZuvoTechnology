@@ -1,0 +1,136 @@
+.why-zuvo {
+  background: var(--zuvo-black);
+
+  &__header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--zuvo-lime);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin-inline: auto;
+  }
+
+  &__bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 1.5rem;
+  }
+
+  &__bento-item {
+    background: var(--zuvo-dark);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+    
+    &:hover {
+      border-color: rgba(191, 255, 0, 0.2);
+      transform: translateY(-4px);
+      background: var(--zuvo-dark-2);
+    }
+    
+    &--large {
+      grid-column: span 2;
+      grid-row: span 2;
+      
+      .why-zuvo__bento-content {
+        h3 { font-size: 2rem; }
+        p { font-size: 1.1rem; max-width: 80%; }
+      }
+      
+      .why-zuvo__bento-visual {
+        bottom: -20px;
+        right: -20px;
+      }
+    }
+    
+    &--wide {
+      grid-column: span 2;
+      
+      .why-zuvo__bento-visual {
+        bottom: -10px;
+        right: 20px;
+      }
+    }
+  }
+
+  &__bento-content {
+    position: relative;
+    z-index: 2;
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--zuvo-white);
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      color: var(--zuvo-gray-light);
+      line-height: 1.5;
+    }
+  }
+
+  &__bento-visual {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    z-index: 1;
+    pointer-events: none;
+    transition: all var(--transition-base);
+  }
+
+  &__bento-item:hover &__bento-visual {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-zuvo {
+    &__bento {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: minmax(200px, auto);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .why-zuvo {
+    &__bento {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+    
+    &__bento-item {
+      &--large, &--wide {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      
+      &--large .why-zuvo__bento-content h3 {
+        font-size: 1.5rem;
+      }
+      
+      &--large .why-zuvo__bento-content p {
+        max-width: 100%;
+      }
+    }
+  }
+}
