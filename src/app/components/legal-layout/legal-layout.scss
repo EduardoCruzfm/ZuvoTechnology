@@ -1,0 +1,178 @@
+/* Páginas legales — estilos con prefijo .legal (encapsulación desactivada) */
+.legal {
+  background: var(--zuvo-black);
+  padding-block: calc(var(--navbar-height) + clamp(2.5rem, 6vw, 4.5rem)) clamp(4rem, 8vw, 7rem);
+
+  &__container.container {
+    max-width: 880px;
+  }
+
+  /* Breadcrumb */
+  &__breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--zuvo-lime);
+
+    li + li::before {
+      content: '>';
+      margin-right: 0.5rem;
+      color: var(--zuvo-gray);
+    }
+
+    a {
+      color: var(--zuvo-gray-light);
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--zuvo-white);
+      }
+    }
+  }
+
+  /* Título principal */
+  &__title {
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 800;
+    color: var(--zuvo-white);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow-wrap: break-word;
+  }
+
+  /* Cuerpo */
+  &__body {
+    max-width: 760px;
+    overflow-wrap: break-word;
+
+    p,
+    li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--zuvo-gray-lighter);
+    }
+
+    strong {
+      color: var(--zuvo-white);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--zuvo-lime);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+
+      &:hover {
+        color: var(--zuvo-lime-dark);
+      }
+    }
+  }
+
+  &__doc-heading {
+    margin-bottom: 1.75rem;
+
+    p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.6;
+      text-transform: uppercase;
+      color: var(--zuvo-white);
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Secciones */
+  &__section {
+    margin-top: 2.25rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    scroll-margin-top: calc(var(--navbar-height) + 1rem);
+  }
+
+  &__section-title {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--zuvo-white);
+    margin-bottom: 1.25rem;
+  }
+
+  &__section-number {
+    color: var(--zuvo-lime);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.75em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--zuvo-lime);
+      }
+    }
+  }
+
+  /* Aviso discreto (contenido pendiente) */
+  &__notice {
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--zuvo-lime);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+
+    p {
+      font-size: 0.95rem;
+      color: var(--zuvo-gray-light);
+    }
+  }
+
+  /* Tarjeta de instrucciones */
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: var(--zuvo-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+  }
+
+  &__body &__lead {
+    font-size: 1.125rem;
+    color: var(--zuvo-white);
+  }
+
+  &__path {
+    display: inline-block;
+    padding: 0.1rem 0.75rem;
+    border: 1px solid rgba(191, 255, 0, 0.3);
+    border-radius: var(--radius-full);
+    background: var(--zuvo-lime-glow);
+    color: var(--zuvo-lime) !important;
+    white-space: nowrap;
+  }
+}
+

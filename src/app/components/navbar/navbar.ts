@@ -5,6 +5,7 @@ import {
   ElementRef,
   inject,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ import {
 })
 export class Navbar {
   private el = inject(ElementRef);
+  private router = inject(Router);
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
 
@@ -53,6 +55,9 @@ export class Navbar {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Desde una página legal: volver al Inicio y bajar a la sección.
+      this.router.navigate(['/'], { fragment: id });
     }
   }
 }

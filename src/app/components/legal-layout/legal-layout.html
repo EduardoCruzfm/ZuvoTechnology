@@ -1,0 +1,52 @@
+<article class="legal">
+  <div class="legal__container container">
+    <nav class="legal__breadcrumb" aria-label="Ruta de navegación">
+      <ol>
+        <li><a routerLink="/">Inicio</a></li>
+        <li aria-current="page">{{ breadcrumb() }}</li>
+      </ol>
+    </nav>
+
+    <h1 class="legal__title">{{ heading() }}</h1>
+
+    <div class="legal__body">
+      @if (document(); as doc) {
+        @if (doc.heading?.length) {
+          <div class="legal__doc-heading">
+            @for (line of doc.heading; track $index) {
+              <p>{{ line }}</p>
+            }
+          </div>
+        }
+
+        @for (paragraph of doc.intro; track $index) {
+          <p class="legal__paragraph">@for (part of parts(paragraph); track $index) {@if (part.bold) {<strong>{{ part.value }}</strong>} @else {<span>{{ part.value }}</span>}}</p>
+        }
+
+        @for (section of doc.sections; track section.number) {
+          <section class="legal__section" [id]="'seccion-' + section.number">
+            <h2 class="legal__section-title">
+              <span class="legal__section-number">{{ section.number }}.</span>
+              {{ section.title }}
+            </h2>
+
+            @for (paragraph of section.paragraphs; track $index) {
+              <p class="legal__paragraph">@for (part of parts(paragraph); track $index) {@if (part.bold) {<strong>{{ part.value }}</strong>} @else {<span>{{ part.value }}</span>}}</p>
+            }
+
+            @if (section.items?.length) {
+              <ul class="legal__list">
+                @for (item of section.items; track $index) {
+                  <li>@for (part of parts(item); track $index) {@if (part.bold) {<strong>{{ part.value }}</strong>} @else {<span>{{ part.value }}</span>}}</li>
+                }
+              </ul>
+            }
+          </section>
+        }
+      }
+
+      <ng-content></ng-content>
+    </div>
+  </div>
+</article>
+

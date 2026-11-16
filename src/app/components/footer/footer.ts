@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
@@ -17,6 +18,14 @@ export class Footer {
     { label: 'Contacto', href: '#contacto' },
   ];
   
+  legalLinks = [
+    { label: 'Política de Privacidad', route: '/privacidad' },
+    { label: 'Términos y Condiciones', route: '/terminos' },
+    { label: 'Eliminar mi cuenta', route: '/eliminar-cuenta' },
+  ];
+
+  private router = inject(Router);
+  
   currentYear = new Date().getFullYear();
   
   scrollTo(event: Event, href: string) {
@@ -25,6 +34,9 @@ export class Footer {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Desde una página legal: volver al Inicio y bajar a la sección.
+      this.router.navigate(['/'], { fragment: id });
     }
   }
 }
