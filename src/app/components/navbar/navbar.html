@@ -24,7 +24,8 @@
       class="navbar__hamburger"
       (click)="toggleMobileMenu()"
       [attr.aria-expanded]="isMobileMenuOpen()"
-      aria-label="Abrir menú"
+      [attr.aria-label]="isMobileMenuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+      aria-controls="navbar-mobile-menu"
     >
       <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
       <span class="navbar__hamburger-line" [class.open]="isMobileMenuOpen()"></span>
@@ -33,7 +34,7 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div class="navbar__mobile" [class.active]="isMobileMenuOpen()">
+  <div class="navbar__mobile" id="navbar-mobile-menu" [class.active]="isMobileMenuOpen()">
     <ul class="navbar__mobile-links">
       @for (link of navLinks; track link.href) {
         <li>
