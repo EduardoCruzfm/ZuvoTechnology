@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+
+/** Casilla de soporte: reenvía al equipo de Zuvo. */
+export const SUPPORT_EMAIL = 'soporte@zuvotechnology.com';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +12,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 })
 export class Contact {
   contactForm: FormGroup;
-  isSubmitted = false;
+  isSubmitted = signal(false);
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -19,16 +22,29 @@ export class Contact {
     });
   }
 
+  /**
+   * La web no tiene servidor propio: el formulario abre la app de email de la
+   * persona con el mensaje listo para soporte. Se envía desde ahí.
+   */
   onSubmit() {
     if (this.contactForm.valid) {
-      // Simulate form submission
-      console.log('Form submitted:', this.contactForm.value);
-      this.isSubmitted = true;
-      this.contactForm.reset();
-      
-      setTimeout(() => {
-        this.isSubmitted = false;
-      }, 5000);
+      this.openMailClient(this.buildMailto());
+      this.isSubmitted.set(true);
     }
+  }
+
+  closeSuccess() {
+    this.isSubmitted.set(false);
+  }
+
+  buildMailto(): string {
+    const { name, email, message } = this.contactForm.value;
+    const subject = `Consulta desde la web: ${name.trim()}`;
+    const body = `${message.trim()}\r\n\r\n—\r\nNombre: ${name.trim()}\r\nEmail: ${email.trim()}`;
+    return `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  protected openMailClient(url: string) {
+    window.location.href = url;
   }
 }

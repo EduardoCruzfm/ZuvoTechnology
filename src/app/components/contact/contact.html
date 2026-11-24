@@ -10,7 +10,7 @@
         </p>
 
         <div class="contact__details">
-          <a href="mailto:zuvotechnology@gmail.com" class="contact__detail-link">
+          <a href="mailto:soporte@zuvotechnology.com" class="contact__detail-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
@@ -35,11 +35,19 @@
       <div class="contact__form-wrapper reveal reveal-delay-2">
         <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           
-          @if (isSubmitted) {
-            <div class="contact__success">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <h4>Mensaje enviado</h4>
-              <p>Gracias por contactarnos. Te responderemos a la brevedad.</p>
+          <!-- La web no envía el mensaje: lo deja listo en la app de email de la persona. -->
+          @if (isSubmitted()) {
+            <div class="contact__success" role="status">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <h4>Tu mensaje está listo</h4>
+              <p>Lo abrimos en tu app de email. Solo falta que lo envíes desde ahí.</p>
+              <p class="contact__success-alt">
+                ¿No se abrió? Escribinos a
+                <a href="mailto:soporte@zuvotechnology.com">soporte&#64;zuvotechnology.com</a>
+              </p>
+              <button type="button" class="btn btn--secondary btn--sm" (click)="closeSuccess()">
+                Volver al formulario
+              </button>
             </div>
           }
 
@@ -61,6 +69,7 @@
           <button type="submit" class="btn btn--primary contact__submit" [disabled]="contactForm.invalid">
             Enviar mensaje
           </button>
+          <p class="contact__hint">Se abre tu app de email con el mensaje listo para enviar.</p>
         </form>
       </div>
     </div>

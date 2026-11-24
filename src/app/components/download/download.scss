@@ -104,28 +104,20 @@
     z-index: 2;
   }
 
-  &__qr-wrapper {
+  &__app {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 
-  &__qr {
+  &__app-icon {
     width: 180px;
     height: 180px;
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 1rem;
-    box-shadow: var(--shadow-lg);
+    filter: drop-shadow(var(--shadow-lime));
   }
 
-  &__qr-svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  &__qr-text {
+  &__app-text {
     font-size: 0.85rem;
     color: var(--zuvo-gray-light);
     font-weight: 500;
