@@ -9,6 +9,12 @@ export const routes: Routes = [
     title: 'Zuvo — La nueva forma de moverte',
   },
   {
+    path: 'conductores',
+    title: 'Conductores — Zuvo',
+    loadComponent: () =>
+      import('./pages/conductores/conductores').then((m) => m.ConductoresPage),
+  },
+  {
     path: 'privacidad',
     title: 'Política de Privacidad — Zuvo',
     loadComponent: () =>

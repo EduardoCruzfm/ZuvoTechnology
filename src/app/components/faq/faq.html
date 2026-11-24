@@ -1,0 +1,52 @@
+<section class="faq section" id="preguntas-frecuentes" aria-labelledby="faq-title">
+  <div class="faq__container container">
+    <div class="faq__header reveal">
+      <span class="faq__label">Ayuda</span>
+      <h2 class="faq__title" id="faq-title">Preguntas <span class="text-lime">frecuentes.</span></h2>
+    </div>
+
+    <!-- Las preguntas cambian al tocar un botón: la animación va en el contenedor, no en cada una -->
+    <div class="faq__body reveal reveal-delay-1">
+      @if (!audience()) {
+        <div class="faq__tabs" role="group" aria-label="Preguntas para">
+          @for (option of options; track option.value) {
+            <button
+              type="button"
+              class="faq__tab"
+              [class.is-active]="current() === option.value"
+              [attr.aria-pressed]="current() === option.value"
+              (click)="selected.set(option.value)"
+            >
+              {{ option.label }}
+            </button>
+          }
+        </div>
+      }
+
+      <div class="faq__list">
+        @for (item of questions(); track item.question) {
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">
+              <span>{{ item.question }}</span>
+              <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </summary>
+            <p class="faq__answer">{{ item.answer }}</p>
+          </details>
+        }
+      </div>
+
+      <div class="faq__more">
+        @if (!audience() && current() === 'conductores') {
+          <a class="btn btn--secondary btn--sm" routerLink="/conductores">Todo sobre ser conductor</a>
+        }
+        <p>
+          ¿Tenés otra pregunta? Escribinos a
+          <a class="faq__more-link" [href]="'mailto:' + supportEmail">{{ supportEmail }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,185 @@
+<!-- Encabezado -->
+<section class="drivers-page__hero" aria-labelledby="drivers-page-title">
+  <div class="container">
+    <span class="drivers-page__label reveal">Para conductores</span>
+    <h1 class="drivers-page__title reveal reveal-delay-1" id="drivers-page-title">Manejá con&nbsp;Zuvo.<br><span class="text-lime">A tu manera.</span></h1>
+    <p class="drivers-page__lead reveal reveal-delay-2">Elegís cuándo conectarte, si hacés viajes o envíos y con qué plan trabajar.</p>
+    <div class="drivers-page__actions reveal reveal-delay-3">
+      <a class="btn btn--primary btn--lg" routerLink="/" fragment="descargar">Descargar la app</a>
+      <a class="btn btn--secondary btn--lg" href="#requisitos" (click)="scrollTo($event, 'requisitos')">Ver requisitos</a>
+    </div>
+  </div>
+</section>
+
+<!-- Requisitos -->
+<section class="drivers-page__section section" id="requisitos" aria-labelledby="requisitos-title">
+  <div class="container">
+    <div class="drivers-page__header reveal">
+      <span class="drivers-page__label">Requisitos</span>
+      <h2 id="requisitos-title">Lo que <span class="text-lime">necesitás.</span></h2>
+      <p class="drivers-page__lead">Lo cargás desde la app y el equipo de Zuvo lo revisa antes de aprobar tu cuenta.</p>
+    </div>
+
+    <div class="drivers-page__grid">
+      <div class="drivers-page__card reveal reveal-delay-1">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+            <circle cx="7" cy="17" r="2"/>
+            <path d="M9 17h6"/>
+            <circle cx="17" cy="17" r="2"/>
+          </svg>
+        </div>
+        <h3>Tu vehículo</h3>
+        <ul class="drivers-page__checks">
+          @for (item of vehicle; track item) {
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+        <p class="drivers-page__note">Elegís qué hacés: viajes, envíos o los dos.</p>
+      </div>
+
+      <div class="drivers-page__card reveal reveal-delay-2">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <h3>Tus documentos</h3>
+        <ul class="drivers-page__checks">
+          @for (item of documents; track item) {
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+        <p class="drivers-page__note">Antes de que venzan la licencia o el seguro, te avisamos para que subas los nuevos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cómo empezar -->
+<section class="drivers-page__section drivers-page__section--dark section" aria-labelledby="pasos-title">
+  <div class="container">
+    <div class="drivers-page__header reveal">
+      <span class="drivers-page__label">Cómo empezar</span>
+      <h2 id="pasos-title">En 4 <span class="text-lime">pasos.</span></h2>
+    </div>
+
+    <ol class="drivers-page__steps">
+      @for (step of steps; track step.title; let i = $index) {
+        <li class="drivers-page__step reveal reveal-delay-{{ i + 1 }}">
+          <span class="drivers-page__step-number">0{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- Planes -->
+<section class="drivers-page__section section" aria-labelledby="planes-title">
+  <div class="container">
+    <div class="drivers-page__header reveal">
+      <span class="drivers-page__label">Planes</span>
+      <h2 id="planes-title">Elegí cómo <span class="text-lime">trabajar.</span></h2>
+      <p class="drivers-page__lead">Dos planes para elegir. Podés cambiar de plan desde la app.</p>
+    </div>
+
+    <div class="drivers-page__grid">
+      <div class="drivers-page__card reveal reveal-delay-1">
+        <span class="drivers-page__tag">Sin cuota fija</span>
+        <h3>Comisión</h3>
+        <p>Pagás un porcentaje de cada viaje, con un tope por mes. Cuando lo alcanzás, el resto del mes te quedás con el 100%.</p>
+      </div>
+
+      <div class="drivers-page__card drivers-page__card--featured reveal reveal-delay-2">
+        <span class="drivers-page__tag">Para quien trabaja mucho</span>
+        <h3>Zuvo Pro</h3>
+        <p>Pagás una cuota por mes, que se descuenta de tu billetera, y te quedás con el 100% de todos tus viajes.</p>
+      </div>
+    </div>
+
+    <p class="drivers-page__footnote reveal">En la app calculás cuánto pagarías con cada plan según lo que facturás, y ves los montos vigentes antes de elegir.</p>
+  </div>
+</section>
+
+<!-- Ganancias -->
+<section class="drivers-page__section drivers-page__section--dark section" aria-labelledby="ganancias-title">
+  <div class="container">
+    <div class="drivers-page__header reveal">
+      <span class="drivers-page__label">Ganancias</span>
+      <h2 id="ganancias-title">Cobrá <span class="text-lime">sin vueltas.</span></h2>
+    </div>
+
+    <div class="drivers-page__grid drivers-page__grid--4">
+      <div class="drivers-page__card reveal reveal-delay-1">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </div>
+        <h3>Efectivo o Mercado Pago</h3>
+        <p>En efectivo cobrás en mano. Con Mercado Pago, tu parte llega a tu billetera y el costo de Mercado Pago lo paga Zuvo.</p>
+      </div>
+
+      <div class="drivers-page__card reveal reveal-delay-2">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"/>
+            <polyline points="7 7 17 7 17 17"/>
+          </svg>
+        </div>
+        <h3>Retirá cuando quieras</h3>
+        <p>A tu Mercado Pago o a tu cuenta bancaria, a tu nombre. Llega en hasta 24 horas hábiles.</p>
+      </div>
+
+      <div class="drivers-page__card reveal reveal-delay-3">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Propinas para vos</h3>
+        <p>Las propinas son 100% tuyas: no pagan comisión.</p>
+      </div>
+
+      <div class="drivers-page__card reveal reveal-delay-4">
+        <div class="drivers-page__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--zuvo-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <h3>Todo a la vista</h3>
+        <p>En la billetera ves cada viaje, cada cobro y cada retiro, y lo que ganaste en el día, la semana y el mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-faq audience="conductores"></app-faq>
+
+<!-- Cierre -->
+<section class="drivers-page__section section" aria-labelledby="cierre-title">
+  <div class="container">
+    <div class="drivers-page__header reveal">
+      <h2 id="cierre-title">¿Listo para <span class="text-lime">manejar?</span></h2>
+      <p class="drivers-page__lead">Descargá la app y registrate como conductor.</p>
+      <div class="drivers-page__actions">
+        <a class="btn btn--primary btn--lg" routerLink="/" fragment="descargar">Descargar la app</a>
+      </div>
+    </div>
+  </div>
+</section>

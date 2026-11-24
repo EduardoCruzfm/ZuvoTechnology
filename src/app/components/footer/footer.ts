@@ -15,6 +15,7 @@ export class Footer {
     { label: 'Conductores', href: '#conductores' },
     { label: 'Tecnología', href: '#tecnologia' },
     { label: 'Nosotros', href: '#nosotros' },
+    { label: 'Preguntas frecuentes', href: '#preguntas-frecuentes' },
     { label: 'Contacto', href: '#contacto' },
   ];
   

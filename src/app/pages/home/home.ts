@@ -10,6 +10,7 @@ import { WhyZuvo } from '../../components/why-zuvo/why-zuvo';
 import { Download } from '../../components/download/download';
 import { JoinDrivers } from '../../components/join-drivers/join-drivers';
 import { AboutUs } from '../../components/about-us/about-us';
+import { Faq } from '../../components/faq/faq';
 import { Contact } from '../../components/contact/contact';
 
 /**
@@ -30,6 +31,7 @@ import { Contact } from '../../components/contact/contact';
     Download,
     JoinDrivers,
     AboutUs,
+    Faq,
     Contact,
   ],
   templateUrl: './home.html',
