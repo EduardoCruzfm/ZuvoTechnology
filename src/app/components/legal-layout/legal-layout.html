@@ -43,6 +43,14 @@
             }
           </section>
         }
+
+        @if (doc.closing?.length) {
+          <div class="legal__doc-closing">
+            @for (line of doc.closing; track $index) {
+              <p>{{ line }}</p>
+            }
+          </div>
+        }
       }
 
       <ng-content></ng-content>

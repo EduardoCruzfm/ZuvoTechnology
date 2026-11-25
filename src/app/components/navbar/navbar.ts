@@ -34,6 +34,16 @@ export class Navbar {
     this.isScrolled.set(window.scrollY > 50);
   }
 
+  // Con el menú del celular abierto, Escape lo cierra y vuelve al botón.
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (!this.isMobileMenuOpen()) {
+      return;
+    }
+    this.closeMobileMenu();
+    this.el.nativeElement.querySelector('.navbar__hamburger')?.focus();
+  }
+
   toggleMobileMenu() {
     this.isMobileMenuOpen.update((v) => !v);
     if (this.isMobileMenuOpen()) {

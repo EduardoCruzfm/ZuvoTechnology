@@ -166,8 +166,25 @@
     
     p {
       color: var(--zuvo-gray-light);
-      max-width: 250px;
+      max-width: 280px;
     }
+  }
+
+  &__success-alt {
+    font-size: 0.9rem;
+
+    a {
+      color: var(--zuvo-lime);
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__hint {
+    margin-top: -0.75rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--zuvo-gray-mid);
   }
 }
 

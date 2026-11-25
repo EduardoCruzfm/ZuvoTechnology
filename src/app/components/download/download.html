@@ -2,9 +2,12 @@
   <div class="download__container container">
     <div class="download__card reveal">
       <div class="download__content">
-        <span class="download__label">App para pasajeros</span>
+        <span class="download__label">Pasajeros y conductores</span>
         <h2 class="download__title">Tu próximo viaje <br><span class="text-lime">empezará acá.</span></h2>
-        <p class="download__text">Muy pronto en iOS y Android.</p>
+        <p class="download__text">
+          Muy pronto en iOS y Android. Con la misma app vas a poder pedir viajes o registrarte
+          como conductor.
+        </p>
         
         <!-- <div class="download__buttons">
           <a href="#" class="btn btn--dark download__store-btn" aria-label="Descargar en App Store">
@@ -31,38 +34,20 @@
       </div>
       
       <div class="download__visual">
-        <div class="download__qr-wrapper">
-          <div class="download__qr">
-            <!-- Simulated QR code -->
-            <svg viewBox="0 0 100 100" fill="none" class="download__qr-svg">
-              <rect width="100" height="100" rx="12" fill="white"/>
-              <!-- QR Patterns -->
-              <rect x="15" y="15" width="20" height="20" rx="2" stroke="var(--zuvo-black)" stroke-width="4"/>
-              <rect x="20" y="20" width="10" height="10" fill="var(--zuvo-black)"/>
-              
-              <rect x="65" y="15" width="20" height="20" rx="2" stroke="var(--zuvo-black)" stroke-width="4"/>
-              <rect x="70" y="20" width="10" height="10" fill="var(--zuvo-black)"/>
-              
-              <rect x="15" y="65" width="20" height="20" rx="2" stroke="var(--zuvo-black)" stroke-width="4"/>
-              <rect x="20" y="70" width="10" height="10" fill="var(--zuvo-black)"/>
-              
-              <!-- Center Logo -->
-              <rect x="40" y="40" width="20" height="20" rx="4" fill="var(--zuvo-lime)"/>
-              
-              <!-- Random dots for QR -->
-              <rect x="45" y="15" width="5" height="5" fill="var(--zuvo-black)"/>
-              <rect x="55" y="15" width="5" height="5" fill="var(--zuvo-black)"/>
-              <rect x="45" y="25" width="15" height="5" fill="var(--zuvo-black)"/>
-              <rect x="65" y="45" width="10" height="5" fill="var(--zuvo-black)"/>
-              <rect x="75" y="55" width="5" height="25" fill="var(--zuvo-black)"/>
-              <rect x="85" y="45" width="5" height="15" fill="var(--zuvo-black)"/>
-              <rect x="45" y="65" width="25" height="5" fill="var(--zuvo-black)"/>
-              <rect x="45" y="75" width="15" height="5" fill="var(--zuvo-black)"/>
-              <rect x="65" y="85" width="10" height="5" fill="var(--zuvo-black)"/>
-              <rect x="15" y="45" width="20" height="5" fill="var(--zuvo-black)"/>
-            </svg>
-          </div>
-          <span class="download__qr-text">Escaneá para descargar</span>
+        <!--
+          TODO: cuando la app esté publicada, poner acá un QR real que lleve a la
+          ficha de Google Play (y volver a mostrar los botones de las tiendas).
+        -->
+        <div class="download__app">
+          <img
+            class="download__app-icon"
+            src="zuvo-app-icon.webp"
+            alt="Ícono de la app Zuvo"
+            width="180"
+            height="180"
+            loading="lazy"
+          >
+          <span class="download__app-text">Próximamente en las tiendas</span>
         </div>
       </div>
     </div>

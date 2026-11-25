@@ -22,5 +22,7 @@ export interface LegalDocument {
   intro: string[];
   /** Secciones numeradas. */
   sections: LegalSection[];
+  /** Líneas finales del documento original, después de las secciones (opcional). */
+  closing?: string[];
 }
 
