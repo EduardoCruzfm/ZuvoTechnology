@@ -2,7 +2,9 @@
   <div class="footer__container container">
     <div class="footer__top">
       <div class="footer__brand">
-        <a href="#inicio" class="footer__logo" (click)="scrollTo($event, '#inicio')">ZUVO</a>
+        <a href="#inicio" class="footer__logo" (click)="scrollTo($event, '#inicio')" aria-label="Zuvo - Ir al inicio">
+          <img class="footer__logo-img" src="zuvo-logo.png" alt="Zuvo" width="356" height="153" loading="lazy">
+        </a>
         <p class="footer__tagline">Tecnología para moverte mejor.</p>
       </div>
       
