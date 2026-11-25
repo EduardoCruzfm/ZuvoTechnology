@@ -26,16 +26,18 @@
   }
 
   &__logo {
-    font-size: 1.75rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    color: var(--zuvo-white);
-    transition: color var(--transition-fast);
     flex-shrink: 0;
+    transition: opacity var(--transition-fast);
 
     &:hover {
-      color: var(--zuvo-lime);
+      opacity: 0.85;
     }
+  }
+
+  /* Logo oficial (el mismo de la app) */
+  &__logo-img {
+    height: 44px;
+    width: auto;
   }
 
   &__links {

@@ -20,7 +20,8 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.navbar__logo')?.textContent).toContain('ZUVO');
+    expect(compiled.querySelector('.navbar__logo img')?.getAttribute('src')).toBe('zuvo-logo.png');
+    expect(compiled.querySelector('.footer__logo img')?.getAttribute('src')).toBe('zuvo-logo.png');
     expect(compiled.querySelector('.footer__copyright')?.textContent).toContain(
       `© ${new Date().getFullYear()} Zuvo Technology`,
     );
